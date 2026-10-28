@@ -2143,30 +2143,30 @@
     <div id="schedule-drawer-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 hidden" onclick="closeScheduleDrawer()"></div>
     
     <div id="schedule-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-2xl bg-[#080c16] border-l border-amber-500/40 shadow-[-15px_0_50px_rgba(0,0,0,0.85)] z-50 flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out">
-        <!--  Header -->
+        <!-- Header -->
         <div class="px-6 py-4 border-b border-slate-800/80 bg-[#0c1220] flex items-center justify-between">
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3 min-w-0">
                 <div class="w-9 h-9 rounded-full border border-amber-500/50 bg-amber-500/10 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(245,158,11,0.3)]">
                     <i data-lucide="calendar-check" class="w-4 h-4 text-amber-400"></i>
                 </div>
-                <div>
+                <div class="min-w-0">
                     <div class="flex items-center space-x-2">
-                        <h2 class="text-base font-bold text-white tracking-wide">Nominal 7 dActive directive</h2>
-                        <span class="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded font-mono font-bold">Nominal Milestone</span>
+                        <h2 class="text-base font-bold text-white tracking-wide truncate">7-Day Operations Schedule</h2>
+                        <span class="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded font-mono font-bold shrink-0">Milestones</span>
                     </div>
-                    <div class="text-[11px] text-slate-400 mt-0.5 font-mono">
-                        Active directive · E-CommerceNominal · Media GrowthmNominal · Operational metric verified
+                    <div class="text-[11px] text-slate-400 mt-0.5 font-mono truncate">
+                        Autonomous E-Commerce · Content Matrix · B2B Deals · Radar Timeline
                     </div>
                 </div>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-2 shrink-0">
                 <button onclick="openScheduleAddModal()" class="px-2.5 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-mono font-bold flex items-center space-x-1 transition shadow">
                     <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-                    <span>NominalPending Approvals</span>
+                    <span>+ New Task</span>
                 </button>
                 <button onclick="exportWeeklyScheduleBrief()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-mono font-bold flex items-center space-x-1 transition shadow">
                     <i data-lucide="download" class="w-3.5 h-3.5 text-cyan-400"></i>
-                    <span>Active directive</span>
+                    <span>Export ICS</span>
                 </button>
                 <button onclick="closeScheduleDrawer()" class="w-8 h-8 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition">
                     <i data-lucide="x" class="w-4 h-4"></i>
@@ -2174,40 +2174,40 @@
             </div>
         </div>
 
-        <!--  -->
+        <!-- Metric Stat Cards -->
         <div class="px-6 py-3 bg-[#0a0f1c] border-b border-slate-800/60 grid grid-cols-3 gap-3 font-mono text-center">
             <div class="bg-[#0f172a]/80 p-2 rounded-xl border border-slate-800">
-                <div class="text-[10px] text-slate-400">TodayPending ApprovalsNominal</div>
-                <div id="sch-stat-today" class="text-xs font-bold text-white mt-0.5">5  items (Pending Approvals 4  items)</div>
+                <div class="text-[10px] text-slate-400">Today Pending</div>
+                <div id="sch-stat-today" class="text-xs font-bold text-white mt-0.5">1 item Today</div>
             </div>
             <div class="bg-[#0f172a]/80 p-2 rounded-xl border border-amber-500/30">
-                <div class="text-[10px] text-amber-300">7-Day Strategic Milestones</div>
-                <div id="sch-stat-total" class="text-xs font-bold text-amber-400 mt-0.5">11  itemsActive directive</div>
+                <div class="text-[10px] text-amber-300">7-Day Horizon</div>
+                <div id="sch-stat-total" class="text-xs font-bold text-amber-400 mt-0.5">11 Active Milestones</div>
             </div>
             <div class="bg-[#0f172a]/80 p-2 rounded-xl border border-rose-500/30">
-                <div class="text-[10px] text-rose-300">Active directive</div>
-                <div id="sch-stat-urgent" class="text-xs font-bold text-rose-400 mt-0.5">2  items🔴 Critical Deliverables</div>
+                <div class="text-[10px] text-rose-300">Critical Deliverables</div>
+                <div id="sch-stat-urgent" class="text-xs font-bold text-rose-400 mt-0.5">3 Critical Items</div>
             </div>
         </div>
 
-        <!--  Tab -->
+        <!-- Category Filter Tabs -->
         <div class="px-6 py-2.5 bg-[#0c1220] border-b border-slate-800 flex items-center space-x-2 overflow-x-auto text-xs font-mono">
-            <button onclick="filterSchedule('all', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-amber-600 text-white font-bold transition">Nominal (11)</button>
-            <button onclick="filterSchedule('today', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Nominal</button>
-            <button onclick="filterSchedule('client_delivery', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Nominal</button>
-            <button onclick="filterSchedule('ecom_ops', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">E-CommerceNominal</button>
-            <button onclick="filterSchedule('content_publish', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Media GrowthNominal</button>
-            <button onclick="filterSchedule('radar_scan', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Nominal</button>
+            <button onclick="filterSchedule('all', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-amber-600 text-white font-bold transition">All (11)</button>
+            <button onclick="filterSchedule('today', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Today</button>
+            <button onclick="filterSchedule('client_delivery', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">B2B Deals</button>
+            <button onclick="filterSchedule('ecom_ops', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">E-Commerce</button>
+            <button onclick="filterSchedule('content_publish', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Media Growth</button>
+            <button onclick="filterSchedule('radar_scan', this)" class="sch-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Radar Scan</button>
         </div>
 
-        <!--  -->
+        <!-- Task List Items -->
         <div id="schedule-list-container" class="p-6 overflow-y-auto space-y-3.5 flex-1">
-            <!--  -->
+            <!-- Dynamic task items injected via renderSchedule() -->
         </div>
 
-        <!--  -->
+        <!-- Drawer Footer -->
         <div class="px-6 py-3 bg-[#0a0f1c] border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
-            <span class="text-slate-400 text-[11px]">Click the checkbox to mark milestone completed · Click the action button to navigate directly to the target module</span>
+            <span class="text-slate-400 text-[11px]">Click checkbox to toggle completion · Click action to jump to workflow</span>
             <button onclick="closeScheduleDrawer()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold px-4 py-1.5 rounded-lg transition">
                 Close Drawer
             </button>
@@ -4234,14 +4234,14 @@
 
         async function loadSchedule() {
             try {
-                const res = await fetch('/api/schedule/report');
+                const res = await fetch('/api/schedule/report?lang=en');
                 const data = await res.json();
                 if (data.status === 'success') {
                     window.currentSchedules = data.schedules || [];
                     const sum = data.summary;
-                    document.getElementById('sch-stat-today').innerText = `${sum.today_total}  items (Pending Approvals ${sum.today_pending}  items)`;
-                    document.getElementById('sch-stat-total').innerText = `${sum.total_7_days}  itemsActive directive`;
-                    document.getElementById('sch-stat-urgent').innerText = `${sum.urgent_count}  items🔴 Critical Deliverables`;
+                    document.getElementById('sch-stat-today').innerText = `${sum.today_total} Total (${sum.today_pending} Pending)`;
+                    document.getElementById('sch-stat-total').innerText = `${sum.total_7_days} Milestones Active`;
+                    document.getElementById('sch-stat-urgent').innerText = `${sum.urgent_count} Critical Deliverables`;
                     renderSchedule(window.currentSchedules);
                 }
             } catch(e) {
@@ -4386,7 +4386,7 @@
                                 <span class="text-[10px] px-2 py-0.5 rounded border font-bold ${item.badge_color}">${item.category_name}</span>
                                 <span class="text-[10px] text-slate-300 font-bold">${item.priority_label}</span>
                                 <span class="text-[10px] text-slate-400">${item.date} · ${item.time}</span>
-                                ${item.is_automated ? '<span class="text-[9px] bg-slate-800 text-slate-400 px-1 rounded">NominalAI</span>' : '<span class="text-[9px] bg-amber-500/10 text-amber-300 px-1 rounded">YasinNominal</span>'}
+                                ${item.is_automated ? '<span class="text-[9px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded font-mono">Autonomous AI</span>' : '<span class="text-[9px] bg-amber-500/10 text-amber-300 px-1.5 py-0.5 rounded font-mono font-bold">Founder</span>'}
                             </div>
 
                             <!--  -->
