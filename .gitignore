@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Databases & State
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Credentials & Private Env
+.env
+.env.*
+*.pem
+*.key
+token.json
+credentials.json
+
+# Local artifacts & caches
+.DS_Store
+submission_output/*.png
+*.log
+.venv/
+venv/
+env/
