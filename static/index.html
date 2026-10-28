@@ -257,6 +257,13 @@
         .glow-line-purple { filter: drop-shadow(0 0 4px rgba(192, 132, 252, 0.7)); }
         .glow-line-indigo { filter: drop-shadow(0 0 4px rgba(99, 102, 241, 0.7)); }
         .glow-line-amber  { filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.7)); }
+    
+        /* 彻底消除侧边抽屉隐藏时的幽灵阴影与边界混叠 (Ghost Drawer Shadow Killer) */
+        .translate-x-full {
+            box-shadow: none !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
     </style>
 </head>
 <body class="min-h-screen bg-grid flex flex-col antialiased">
