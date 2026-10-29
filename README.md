@@ -1,6 +1,7 @@
 # 🚀 OmniNexus: Production-Ready Autonomous Multi-Agent Matrix
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Demo Video](https://img.shields.io/badge/Demo%20Video-YouTube%201080P-red.svg)](https://youtu.be/harj0ikIWDg)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-brightgreen.svg)](https://www.python.org/)
 [![Model](https://img.shields.io/badge/Gemini-2.5%20Pro%20%7C%20Flash-orange.svg)](https://deepmind.google/technologies/gemini/)
 [![Protocol](https://img.shields.io/badge/Protocol-FastMCP%20Standard-purple.svg)](https://modelcontextprotocol.io/)
